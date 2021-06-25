@@ -1,8 +1,12 @@
+import sarahPic from '../Avatars/avatar1.png'
+import tylerPic from '../Avatars/avatar2.png'
+import johnPic from '../Avatars/avatar3.png'
+
 let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: './Avatars/avatar1.png',
+    avatarURL: sarahPic,
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -14,7 +18,7 @@ let users = {
   tylermcginnis: {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: './Avatars/avatar2.png',
+    avatarURL: tylerPic,
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -24,7 +28,7 @@ let users = {
   johndoe: {
     id: 'johndoe',
     name: 'John Doe',
-    avatarURL: './Avatars/avatar3.png',
+    avatarURL: johnPic,
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',

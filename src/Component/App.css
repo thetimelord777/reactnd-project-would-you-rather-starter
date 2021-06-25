@@ -33,7 +33,7 @@
   flex-direction: row;
     overflow: hidden;
     color: #0FD46B;
-    background-color: #1F4570;
+    background-color: #bb2f2f;
     padding-left: 0;
     margin: 0;
 }
@@ -46,6 +46,22 @@
 
 }
 
+.Avatars {
+  width: 40px;
+  height: 40px;
+}
+
+.User-mini{
+  display: flex;
+  flex-direction: row;
+    overflow: hidden;
+    padding-left: 0;
+    margin: 0;
+}
+
+#Login-view{
+
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

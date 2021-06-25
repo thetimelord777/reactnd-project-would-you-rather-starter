@@ -2,6 +2,7 @@ import { Component } from "react"
 import logo from './logo.svg'
 import './App.css'
 import {connect} from 'react-redux'
+import UserMini from './UserMini'
 
 class Login extends Component {
     componentDidMount()
@@ -17,11 +18,13 @@ class Login extends Component {
                     <p>please sign in to continue</p>
                     <img src={logo} className="App-logo" alt="logo" />
                     <h2 className='Sign-in'>SIGN IN</h2>
-                    <div className='User-list'>
-                        <ul>
-
+                        <ul className='User-list'>
+                            {
+                                Object.keys(this.props.users).map((keyName, keyIndex) =>(
+                                    <UserMini users = {this.props.users} keyName = {keyName} key = {this.props.users[keyName].id} />
+                                )
+                               )}
                         </ul>
-                    </div>
                 </div>
             </div>
             )
