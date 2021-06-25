@@ -49,16 +49,33 @@
 .Avatars {
   width: 40px;
   height: 40px;
+  text-align: center;
 }
 
 .User-mini{
+  border-style: ridge;
+  border-color: #0FD46B;
+  background-color:aqua;
   display: flex;
   flex-direction: row;
     overflow: hidden;
     padding-left: 0;
+    margin: 10px;
+}
+
+.User-list{
+  display: flex;
+  flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
     margin: 0;
 }
 
+.Avatar-username{
+
+}
 #Login-view{
 
 }

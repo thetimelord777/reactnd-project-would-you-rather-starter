@@ -17,7 +17,7 @@ class Login extends Component {
                     <h1>Hello there! Welcome to this react-redux would you rather project!</h1>
                     <p>please sign in to continue</p>
                     <img src={logo} className="App-logo" alt="logo" />
-                    <h2 className='Sign-in'>SIGN IN</h2>
+                    <h2 className='Sign-in'>SIGN IN BY CHOOSING A USER</h2>
                         <ul className='User-list'>
                             {
                                 Object.keys(this.props.users).map((keyName, keyIndex) =>(
