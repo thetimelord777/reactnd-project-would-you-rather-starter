@@ -12,7 +12,7 @@ class UserMini extends Component {
 
         return keyName ? (
             <li className='User-mini' onClick={()=>(
-                alert("You have succesfully logged in as "+users[keyName]+"!"),
+                alert("You have succesfully logged in as "+ users[keyName].name +"!"),
                 this.props.dispatch(receiveCurrentUser(users[keyName]))
             )}>   
 
