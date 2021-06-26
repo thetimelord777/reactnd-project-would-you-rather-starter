@@ -5,10 +5,6 @@ import {connect} from 'react-redux'
 import UserMini from './UserMini'
 
 class Login extends Component {
-    componentDidMount()
-    {
-        console.log(this.props)
-    }
 
     render(){
         return(

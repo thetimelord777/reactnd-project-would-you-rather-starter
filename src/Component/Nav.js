@@ -3,7 +3,7 @@ import {Component} from 'react'
 import { NavLink } from 'react-router-dom'
 import {connect} from 'react-redux'
 import UserMini from './UserMini'
-import { ROUTE_HOME, ROUTE_QUESTION_LIST, ROUTE_QUESTION_ADD, ROUTE_LEADER_BOARD} from '../Utils/routes'
+import { ROUTE_HOME,ROUTE_QUESTION_LIST, ROUTE_QUESTION_ADD, ROUTE_LEADER_BOARD} from '../Utils/routes'
 
 
 class nav extends Component{
@@ -15,11 +15,14 @@ class nav extends Component{
                 <li> <NavLink to={ROUTE_QUESTION_LIST} exact activeClassName = 'active'> Question List</NavLink></li>
                 <li><NavLink to={ROUTE_QUESTION_ADD} exact activeClassName = 'active'> Add a Question</NavLink></li>
                 <li><NavLink to={ROUTE_LEADER_BOARD} exact activeClassName = 'active'>  Leader Board</NavLink></li>
-                <li id="Login-view"> <NavLink to={ROUTE_HOME} exact activeClassName = 'active'>
-                    {this.props.currentUser === null ? 'Login':
+                <li id="Login-view"> 
+                    {this.props.currentUser === null ? 
+                    <NavLink to={ROUTE_HOME} exact activeClassName = 'active'>
+                      login</NavLink>
+                      :
                     <UserMini users={this.props.currentUser}/>
                     }
-                    </NavLink></li>
+                </li>
             </ul>
         </nav>)
         }
