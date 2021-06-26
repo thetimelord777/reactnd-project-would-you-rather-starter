@@ -1,10 +1,17 @@
 import {Component} from 'react'
 import {connect} from 'react-redux'
 import QuestionItem from './QuestionItem'
+import {Redirect} from 'react-router-dom'
+import {ROUTE_HOME} from '../Utils/routes'
 
 class QuestionView extends Component{
 
     render() {
+
+        if(this.props.currentUser === null){
+            alert('you have to be logged in to enter here.')
+            return (<Redirect to={ROUTE_HOME} />)
+        }
 
         const questions = this.props.questions
         let answeredQuestions = []
@@ -20,6 +27,7 @@ class QuestionView extends Component{
                     {
                         Object.keys(questions).map((keyName, keyIndex) =>(
                             answeredQuestions.includes(keyName) ? ('') : (<QuestionItem 
+                            key={questions[keyName].id}
                             question ={questions[keyName]}
                             author= {this.props.users[questions[keyName].author]}
                             />)
@@ -33,6 +41,7 @@ class QuestionView extends Component{
                     {
                         Object.keys(questions).map((keyName, keyIndex) =>(
                             answeredQuestions.includes(keyName) && (<QuestionItem 
+                            key={questions[keyName].id}
                             question ={questions[keyName]}
                             author= {this.props.users[questions[keyName].author]}
                             />)
@@ -45,9 +54,11 @@ class QuestionView extends Component{
 }
 
 function mapStateToProps ({users, questions,currentUser}) {
+
+
   return {
       users,
-      questions,
+      questions: Object.fromEntries(Object.entries(questions).sort(([,a],[,b]) => b.timestamp-a.timestamp)),
       currentUser
   }
 }

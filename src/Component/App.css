@@ -96,9 +96,27 @@
     margin: 20px;
 }
 
+.question-options{
+  display: flex;
+  flex-direction: row;
+}
+
+.question-options button{
+  size: 40%;
+  margin: 5%;
+
+}
 .Author-img{
   width: 30%;
   height: 30%;
+}
+
+.button-red{
+  background-color: red;
+}
+
+.button-blue{
+  background-color: blue;;
 }
 .Avatar-username{
 
