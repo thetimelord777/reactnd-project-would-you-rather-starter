@@ -12,6 +12,7 @@ class UserMini extends Component {
 
         return keyName ? (
             <li className='User-mini' onClick={()=>(
+                alert("You have succesfully logged in as "+users[keyName]+"!"),
                 this.props.dispatch(receiveCurrentUser(users[keyName]))
             )}>   
 
@@ -25,6 +26,7 @@ class UserMini extends Component {
                 <div>
                         <p>{users.name}</p>
                         <NavLink to={ROUTE_HOME} exact activeClassName = 'active'><p onClick={()=>(
+                        alert("you have successfully logged out!"),
                         this.props.dispatch(logOut())
                         )}>logout</p></NavLink>
                 </div>
