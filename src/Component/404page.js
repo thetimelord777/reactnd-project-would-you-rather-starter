@@ -6,7 +6,7 @@ class NotFound extends Component {
 
         return (
             <div className="App-header">
-                <h1 class="center">404 this question does not exist</h1>
+                <h1>404 this question does not exist</h1>
             </div>
         )
     }

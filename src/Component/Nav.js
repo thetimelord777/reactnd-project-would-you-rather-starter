@@ -14,7 +14,7 @@ class nav extends Component{
             <ul id="navbar__list">
                 <li> <NavLink to={ROUTE_QUESTION_LIST} exact activeClassName = 'active'> Question List</NavLink></li>
                 <li><NavLink to={ROUTE_QUESTION_ADD} exact activeClassName = 'active'> Add a Question</NavLink></li>
-                <li><NavLink to={ROUTE_LEADER_BOARD} exact activeClassName = 'active'>  Leader Board</NavLink></li>
+                <li><NavLink to={ROUTE_LEADER_BOARD} exact activeClassName = 'active'>  Leaderboard</NavLink></li>
                 <li id="Login-view"> 
                     {this.props.currentUser === null ? 
                     <NavLink to={ROUTE_HOME} exact activeClassName = 'active'>
