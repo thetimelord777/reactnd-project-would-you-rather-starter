@@ -57,6 +57,48 @@
 
 }
 
+.btn {
+  text-transform: uppercase;
+  margin: 35px auto;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,.29);
+  cursor: pointer;
+  background: #fff;
+  font-size: 16px;
+  width: 250px;
+  position: relative;
+}
+
+.btn:hover {
+  border-color: rgba(0,0,0,.5);
+  text-decoration: none;
+}
+
+.btn:focus {
+  outline: 0;
+  font-weight: 700;
+  border-width: 2px;
+}
+
+.center {
+  text-align: center;
+}
+
+.textarea {
+  border-radius: 4px;
+  border: 1px solid #dad7d7;
+  padding: 10px;
+  font-size: 15px;
+  height: 100px;
+}
+
+.tweet-length {
+  text-align: right;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #C3392A;
+}
+
 .Avatars {
   width: 40px;
   height: 40px;
@@ -118,12 +160,35 @@
 .button-blue{
   background-color: blue;;
 }
+
+.rankCard{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.rankCardContent{
+  display: flex;
+  flex-direction: row;
+}
+
+
 .Avatar-username{
 
 }
 
 #Login-view{
 
+}
+
+#LeaderBoard{
+  background-color: #282c34;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 #User-info{
