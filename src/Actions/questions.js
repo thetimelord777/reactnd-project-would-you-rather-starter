@@ -39,18 +39,15 @@ export function saveQuestionAnswer(userID, questionID,option){
 function addQuestionAsync(question,dispatch){
 
   _saveQuestion(question)
-  //the added question is not added to the current store state because of how the backend
-  //is set up, but is logged into the console
-  console.log("Supposed to be added question:", formatQuestion(question));
-  /*.then(()=>(dispatch(addQuestionAction(formatQuestion(question)))))*/
+  .then(()=>(dispatch(addQuestionAction(formatQuestion(question)))))
 }
 
-/*function addQuestionAction (question) {
+function addQuestionAction (question) {
   return {
     type: ADD_QUESTION,
     question
   }
-}*/
+}
 
 export function addQuestion (question){
   return(dispatch)=>{
