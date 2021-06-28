@@ -19,24 +19,33 @@ class App extends Component  {
   }
 
   render() {
-    
+
+    function needLogin(X){alert("Please log in to go to your desired page") 
+    return X}
+
     return (
       <div className="App">
         <NavBar/>
         <Route exact path= {ROUTE_HOME} render={()=>(<Login/>)}></Route>
-        <Route exact path={ROUTE_QUESTION_LIST} render={()=>(<QuestionView/>)}></Route>
+        <Route exact path={ROUTE_QUESTION_LIST} render={()=>(this.props.currentUser === null ? 
+        (needLogin(<Login/>)) :
+        (<QuestionView/>))}></Route>
 
         <Route path={ROUTE_GENERAL_QUESTION_PAGE} render={()=>(
-          this.props.currentUser === null ? (<Login/>) 
+          this.props.currentUser === null ? (needLogin(<Login/>)) 
           : (Object.keys(this.props.questions).includes((window.location.pathname).substring(10)) ?
-
               (<QuestionPageView/>)
               :
               (<NotFound/>))
         )}></Route>
 
-        <Route exact path={ROUTE_QUESTION_ADD} render={()=>(<QuestionAddView/>)}></Route>
-        <Route exact path={ROUTE_LEADER_BOARD} render={()=>(<LeaderBoardView/>)}></Route>
+        <Route exact path={ROUTE_QUESTION_ADD} render={()=>(this.props.currentUser === null ? 
+        (needLogin(<Login/>)) :
+        (<QuestionAddView/>))}></Route>
+
+        <Route exact path={ROUTE_LEADER_BOARD} render={()=>(this.props.currentUser === null ? 
+        (needLogin(<Login/>)) :
+        (<LeaderBoardView/>))}></Route>
       </div>
       )
     }
