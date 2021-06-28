@@ -8,12 +8,13 @@ import { ROUTE_HOME } from "../Utils/routes"
 class UserMini extends Component {
      
     render() {
-        const { users , keyName} = this.props
 
+        const { users , keyName} = this.props
+        
         return keyName ? (
             <li className='User-mini' onClick={()=>(
-                alert("You have succesfully logged in as "+ users[keyName].name +"!"),
-                this.props.dispatch(receiveCurrentUser(users[keyName]))
+                (alert("You have succesfully logged in as "+ users[keyName].name +"!"),
+                this.props.dispatch(receiveCurrentUser(users[keyName])))
             )}>   
 
                 <img className= 'Avatars' src={users[keyName].avatarURL} alt='sorry'></img>
@@ -26,8 +27,8 @@ class UserMini extends Component {
                 <div>
                         <p>{users.name}</p>
                         <NavLink to={ROUTE_HOME} exact activeClassName = 'active'><p onClick={()=>(
-                        alert("you have successfully logged out!"),
-                        this.props.dispatch(logOut())
+                        (alert("you have successfully logged out!"),
+                        this.props.dispatch(logOut()))
                         )}>logout</p></NavLink>
                 </div>
                 </div>
