@@ -1,5 +1,5 @@
 export const ROUTE_HOME = '/'
 export const ROUTE_QUESTION_LIST = '/Question_list'
-export const ROUTE_QUESTION_ADD = '/Question_add'
-export const ROUTE_LEADER_BOARD = '/LeaderBoard'
-export const ROUTE_GENERAL_QUESTION_PAGE ='/Question/'
+export const ROUTE_QUESTION_ADD = '/add'
+export const ROUTE_LEADER_BOARD = '/leaderboard'
+export const ROUTE_GENERAL_QUESTION_PAGE ='/questions/'

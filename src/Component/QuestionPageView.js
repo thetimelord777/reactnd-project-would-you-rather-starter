@@ -32,13 +32,15 @@ class QuestionPageView extends Component{
                                     {currentUser.answers[question.id]==='optionOne' && <p>Your Vote!</p>}
                                     {oneVotes + ' out of ' + (oneVotes + twoVotes)}
                                 </p>
+                                <p>{(oneVotes/(oneVotes+twoVotes)*100)+'%'}</p>
                             </div>
                             <div>
                                 <button className='button-blue'>{question.optionTwo.text}</button>
                                 <p>
                                     {currentUser.answers[question.id]==='optionTwo' && <p>Your Vote!</p>}
-                                    {twoVotes + ' out of ' + (oneVotes + twoVotes)}
+                                    {twoVotes + ' out of ' + (oneVotes + twoVotes)} 
                                 </p>
+                                <p>{(twoVotes/(oneVotes+twoVotes)*100)+'%'}</p>
                             </div>
                         </div>
                     </div>
