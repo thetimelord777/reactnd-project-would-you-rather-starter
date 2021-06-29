@@ -13,7 +13,7 @@ import NotFound from './404page'
 import { ROUTE_HOME, ROUTE_QUESTION_LIST, ROUTE_QUESTION_ADD, ROUTE_LEADER_BOARD, ROUTE_GENERAL_QUESTION_PAGE} from '../Utils/routes'
 
 class App extends Component  {
-  
+
   componentDidMount(){
      this.props.dispatch(handleInitialData())
   }
