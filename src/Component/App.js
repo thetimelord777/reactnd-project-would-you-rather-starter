@@ -33,7 +33,9 @@ class App extends Component  {
 
         <Route path={ROUTE_GENERAL_QUESTION_PAGE} render={()=>(
           this.props.currentUser === null ? (needLogin(<Login/>)) 
-          : (Object.keys(this.props.questions).includes((window.location.pathname).substring(11)) ?
+          : ((Object.keys(this.props.questions).includes((window.location.pathname).substring(11))
+            && this.props.questions[(window.location.pathname).substring(11)].timestamp<=1493579767190) 
+            ?
               (<QuestionPageView/>)
               :
               (<NotFound/>))
