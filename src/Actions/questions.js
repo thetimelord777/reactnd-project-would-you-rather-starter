@@ -39,7 +39,9 @@ export function saveQuestionAnswer(userID, questionID,option){
 function addQuestionAsync(question,dispatch){
 
   _saveQuestion(question)
-  .then(()=>(dispatch(addQuestionAction(formatQuestion(question)))))
+ //the commented code would dispatch the new question and shows the new question in the 
+ //question list
+ // .then(()=>(dispatch(addQuestionAction(formatQuestion(question)))))
 }
 
 function addQuestionAction (question) {
