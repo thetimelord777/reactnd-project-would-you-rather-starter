@@ -28,18 +28,14 @@ class QuestionPageView extends Component{
                         <div className="question-options">
                             <div>
                                 <button className="button-red">{question.optionOne.text}</button>
-                                <p>
-                                    {currentUser.answers[question.id]==='optionOne' && <p>Your Vote!</p>}
-                                    {oneVotes + ' out of ' + (oneVotes + twoVotes)}
-                                </p>
+                                <p>{currentUser.answers[question.id]==='optionOne' && 'Your Vote!'}</p>
+                                <p>{oneVotes + ' out of ' + (oneVotes + twoVotes)}</p>
                                 <p>{(oneVotes/(oneVotes+twoVotes)*100).toFixed(2)+'%'}</p>
                             </div>
                             <div>
                                 <button className='button-blue'>{question.optionTwo.text}</button>
-                                <p>
-                                    {currentUser.answers[question.id]==='optionTwo' && <p>Your Vote!</p>}
-                                    {twoVotes + ' out of ' + (oneVotes + twoVotes)} 
-                                </p>
+                                <p>{currentUser.answers[question.id]==='optionTwo' && 'Your Vote!'}</p>
+                                <p>{twoVotes + ' out of ' + (oneVotes + twoVotes)} </p>
                                 <p>{(twoVotes/(oneVotes+twoVotes)*100).toFixed(2)+'%'}</p>
                             </div>
                         </div>
