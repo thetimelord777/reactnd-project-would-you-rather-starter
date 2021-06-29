@@ -1,4 +1,4 @@
-import { _saveQuestionAnswer,_saveQuestion, formatQuestion } from "../Utils/_DATA"
+import { _saveQuestionAnswer,_saveQuestion} from "../Utils/_DATA"
 import { addAnswer,userAddQuestion } from "./users"
 import { updateCurrentUser,currentUserAddQ } from "./currentUser"
 
@@ -39,9 +39,12 @@ export function saveQuestionAnswer(userID, questionID,option){
 function addQuestionAsync(question,dispatch){
 
   _saveQuestion(question)
-  .then(()=>(dispatch(addQuestionAction(formatQuestion(question)))))
-  .then(()=>(dispatch(currentUserAddQ(formatQuestion(question)))))
-  .then(()=>(dispatch(userAddQuestion(question.author,formatQuestion(question)))))
+  .then((res)=>(
+    (
+      dispatch(addQuestionAction(res)),
+      dispatch(currentUserAddQ(res)),
+      dispatch(userAddQuestion(question.author,res))
+    )))
 }
 
 function addQuestionAction (question) {
