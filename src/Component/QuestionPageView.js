@@ -12,7 +12,7 @@ class QuestionPageView extends Component{
             return (<Redirect to={ROUTE_HOME} />)
         }
 
-        const question = this.props.questions[(window.location.pathname).substring(10)]
+        const question = this.props.questions[(window.location.pathname).substring(11)]
         const author = this.props.users[question.author]
         const currentUser = this.props.currentUser
         const oneVotes = (question.optionOne.votes).length

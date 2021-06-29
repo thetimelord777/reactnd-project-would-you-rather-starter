@@ -39,6 +39,15 @@
   font-size: calc(10px + 2vmin);
 }
 
+.Fullbackground{
+  background-color: #282c34;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+}
+
 .navbar__menu ul {
   display: flex;
   flex-direction: row;

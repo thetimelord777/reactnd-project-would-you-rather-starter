@@ -13,7 +13,7 @@ class UserMini extends Component {
         
         return keyName ? (
             <li className='User-mini' onClick={()=>(
-                (alert("You have succesfully logged in as "+ users[keyName].name +"!"),
+                (alert("You have succesfully logged in as "+ users[keyName].name +"!\n the question list can be found below! \n click to alter between the answered and unasnwered questions"),
                 this.props.dispatch(receiveCurrentUser(users[keyName])))
             )}>   
 
