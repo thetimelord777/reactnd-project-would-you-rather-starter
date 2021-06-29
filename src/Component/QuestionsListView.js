@@ -1,8 +1,8 @@
 import {Component} from 'react'
 import {connect} from 'react-redux'
-import QuestionItem from './QuestionItem'
 import {Redirect} from 'react-router-dom'
 import {ROUTE_HOME} from '../Utils/routes'
+import LoginQuestionsView from './LoginQuestionsView'
 
 class QuestionView extends Component{
 
@@ -13,43 +13,9 @@ class QuestionView extends Component{
             return (<Redirect to={ROUTE_HOME} />)
         }
 
-        const questions = this.props.questions
-        let answeredQuestions = []
-        Object.keys(this.props.currentUser.answers).map((keyName, keyIndex) =>(
-            answeredQuestions.push(keyName)
-        ))
-
-        return(
-        <div id="Questions-view">
-            <div className = "Gbackground" >
-                <h1>Unanswered Questions</h1>
-                <ul>
-                    {
-                        Object.keys(questions).map((keyName, keyIndex) =>(
-                            answeredQuestions.includes(keyName) ? ('') : (<QuestionItem 
-                            key={questions[keyName].id}
-                            question ={questions[keyName]}
-                            author= {this.props.users[questions[keyName].author]}
-                            />)
-                        ))
-                    }
-                </ul>
-            </div>
-            <div className = "Gbackground">
-                <h1>Answered Questions</h1>
-                <ul>
-                    {
-                        Object.keys(questions).map((keyName, keyIndex) =>(
-                            answeredQuestions.includes(keyName) && (<QuestionItem 
-                            key={questions[keyName].id}
-                            question ={questions[keyName]}
-                            author= {this.props.users[questions[keyName].author]}
-                            />)
-                        ))
-                    }
-                </ul>
-            </div>
-        </div>)
+        return(  
+                <div className='center'>{this.props.currentUser !== null && <LoginQuestionsView/>}</div>
+                )
         }
 }
 

@@ -3,7 +3,6 @@ import logo from './logo.svg'
 import './App.css'
 import {connect} from 'react-redux'
 import UserMini from './UserMini'
-import LoginQuestionsView from "./LoginQuestionsView"
 
 class Login extends Component {
 
@@ -23,7 +22,6 @@ class Login extends Component {
                                )}
                         </ul>
                 </div>
-                <div className='center'>{this.props.currentUser !== null && <LoginQuestionsView/>}</div>
             </div>
             )
     }

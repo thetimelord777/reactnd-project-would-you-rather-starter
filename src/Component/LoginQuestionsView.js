@@ -16,7 +16,7 @@ class LoginQuestionsView extends Component{
         ))
 
         return(
-        <div id="Questions-view">
+        <div>
             <div className = "Fullbackground" onClick={()=>(this.setState(()=>({
                 answered: !this.state.answered
             })))}>
