@@ -1,6 +1,6 @@
 import { _saveQuestionAnswer,_saveQuestion, formatQuestion } from "../Utils/_DATA"
-import { addAnswer } from "./users"
-import { updateCurrentUser } from "./currentUser"
+import { addAnswer,userAddQuestion } from "./users"
+import { updateCurrentUser,currentUserAddQ } from "./currentUser"
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 export const SAVE_ANSWER = 'SAVE_ANSWER'
@@ -40,6 +40,8 @@ function addQuestionAsync(question,dispatch){
 
   _saveQuestion(question)
   .then(()=>(dispatch(addQuestionAction(formatQuestion(question)))))
+  .then(()=>(dispatch(currentUserAddQ(formatQuestion(question)))))
+  .then(()=>(dispatch(userAddQuestion(question.author,formatQuestion(question)))))
 }
 
 function addQuestionAction (question) {

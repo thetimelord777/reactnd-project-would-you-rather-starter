@@ -1,6 +1,7 @@
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER'
 export const UPDATE_CURRENT_USER = 'UPDATE_CURRENT_USER'
 export const LOGOUT = "LOGOUT"
+export const UPDATE_CURRENT_USER_Q = 'UPDATE_CURRENT_USER_Q'
 
 export function receiveCurrentUser (user) {
   return {
@@ -14,6 +15,13 @@ export function updateCurrentUser(qid,answer){
     type: UPDATE_CURRENT_USER,
     qid,
     answer
+  }
+}
+
+export function currentUserAddQ (question){
+  return{
+    type: UPDATE_CURRENT_USER_Q,
+    question
   }
 }
 export function logOut (){

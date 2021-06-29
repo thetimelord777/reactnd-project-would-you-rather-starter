@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_USER,UPDATE_CURRENT_USER , LOGOUT } from '../Actions/currentUser'
+import { RECEIVE_CURRENT_USER,UPDATE_CURRENT_USER , LOGOUT, UPDATE_CURRENT_USER_Q } from '../Actions/currentUser'
 
 
 export default function users (state = null, action) {
@@ -14,6 +14,11 @@ export default function users (state = null, action) {
           ...state.answers,
           [action.qid]: action.answer
         }
+      }
+    case UPDATE_CURRENT_USER_Q:
+      return{
+        ...state,
+        questions: state.questions.concat([action.question.id])
       }
     case LOGOUT:
       return null
